@@ -1,4 +1,4 @@
-//hi! my name is... who? my name is... what? my name is- erew erew slim shady
+
 //**Note To Self** -Think of this problem like building a coin counting&sorting machine. The user of the machine(the text analyzer) will put in coins(strings) and as a result the machine takes the coins, organizes them, and returns A: the total amout of coins(WordCount) B:How Many Unique Coins there were(uniqueWordCount) C: Average value of the coins(in our case average length of word)
 
 //***regular expression to strip punctuation*** .split(/[ ,!.";:-]+/)
@@ -11,7 +11,6 @@
 //STEP-1 Function and Object definitions
 //function getTokens will take our user-text and strip punctuation to create strings
 function getTokens() {
-    //alert('getTokensActive')
     var userInput = $('#user-text')[0].value.split(/[ ,!.";:-?]+/);
     return userInput
 }
@@ -51,6 +50,6 @@ $('#js-token').on('submit', function (event) {
 
         $('.js-total').html(getTotal(text));
         $('.js-unique').html(getUnique(text));
-        $('.js-average').html(getAverage(text));
+        $('.js-average').html(getAverage(text).toFixed(2)+" characters");
     }
 });
